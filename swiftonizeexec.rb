@@ -4,8 +4,8 @@
 class Swiftonizeexec < Formula
   desc ""
   homepage ""
-  #url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/refs/tags/0.zip"
-  version "0.0"
+  url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/refs/tags/0.zip"
+  version "0"
   sha256 "d4a1966c6adc476c3008b6ecfefe1dcf8009c2108b4ccd243374009a8dce2af0"
   license ""
 
