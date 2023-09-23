@@ -5,19 +5,22 @@ class Swiftonizeexec < Formula
   desc ""
   homepage ""
 
-  url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/4.zip"
-  version "4"
-  sha256 "22813a1b19215b8e43e8d25b8b9d5646e6abe0bdeb84e0573cd448e2e487a12c"
+  url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/master.zip"
+  version "master"
+  #sha256 "22813a1b19215b8e43e8d25b8b9d5646e6abe0bdeb84e0573cd448e2e487a12c"
   license ""
 
   # depends_on "cmake" => :build
+  
+  def processor_count
+	  ((`which hwprefs` != '') ? `hwprefs thread_count` : `sysctl -n hw.ncpu`).to_i
+  end
+  
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "swift", "build", "-c", "release", "--disable-sandbox"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+
+	system "swift", "build", "-c", "release", "--disable-sandbox"
+	
     bin.install ".build/x86_64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
 	bin.install "python_stdlib"
 	bin.install "python-extra"
