@@ -4,9 +4,10 @@
 class Swiftonizeexec < Formula
   desc ""
   homepage ""
-  url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/1.tar.gz"
-  version "0"
-  sha256 "d4a1966c6adc476c3008b6ecfefe1dcf8009c2108b4ccd243374009a8dce2af0"
+
+  url "https://github.com/PythonSwiftLink/SwiftonizeExec/archive/4.zip"
+  version "4"
+  sha256 "22813a1b19215b8e43e8d25b8b9d5646e6abe0bdeb84e0573cd448e2e487a12c"
   license ""
 
   # depends_on "cmake" => :build
