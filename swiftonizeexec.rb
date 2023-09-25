@@ -26,7 +26,7 @@ class Swiftonizeexec < Formula
 		bin.install ".build/arm64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
 	else
 	    	bin.install ".build/x86_64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
-	fi
+	end
 
 	bin.install "python_stdlib"
 	bin.install "python-extra"
