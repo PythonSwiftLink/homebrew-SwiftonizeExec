@@ -21,7 +21,13 @@ class Swiftonizeexec < Formula
 
 	system "swift", "build", "-c", "release", "--disable-sandbox"
 	
-    bin.install ".build/x86_64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
+	if [[ "${UNAME_MACHINE}" == "arm64" ]]
+	then
+		bin.install ".build/arm64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
+	else
+	    	bin.install ".build/x86_64-apple-macosx/release/SwiftonizeExecutable" => "Swiftonize"
+	fi
+
 	bin.install "python_stdlib"
 	bin.install "python-extra"
   end
